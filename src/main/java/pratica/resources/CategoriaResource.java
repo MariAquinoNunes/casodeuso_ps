@@ -20,9 +20,9 @@ public class CategoriaResource {
 	@Autowired
 	private CategoriaService service;
 	
-	@RequestMapping(value="/{id}", method=RequestMethod.GET)
-	public ResponseEntity<?> find(@PathVariable Integer id) {
-		
+	@RequestMapping(value="/{id}", method=RequestMethod.GET) //end point é /ID
+	public ResponseEntity<?> find(@PathVariable Integer id) { //@PathVariable permite que o ID da URL venha para a variável 
+		//ResponseEntity encapsula as informações das respostas HTTP para um serviço REST
 		Categoria obj = service.find(id);
 		return ResponseEntity.ok().body(obj);
 	}
